@@ -23,7 +23,7 @@ export class AuthService {
         return this.login({email,password})
     }
     else{
-        alert('Please Login')
+        alert('Please Create Account First')
         return userAccount;
     }
 
@@ -45,7 +45,8 @@ export class AuthService {
     try {
         return await this.account.get()
     } catch (error) {
-        console.log('Handle error :: getCurrentUser :: error', error);
+        // console.log('Handle error :: getCurrentUser :: error', error);
+        return null
     }
 
     return null
@@ -63,6 +64,6 @@ export class AuthService {
 
 }
 
-const authservice = new AuthService()
+const authservice = new AuthService();
 
-export default authservice
+export default authservice;
